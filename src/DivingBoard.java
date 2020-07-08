@@ -30,7 +30,7 @@ public class DivingBoard {
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      */
     public static void main(String[] args) {
-        int[] res = divingBoard(1, 2, 3);
+        int[] res = divingBoard(1, 1, 100000);
     }
 
     public static int[] divingBoard(int shorter, int longer, int k) {
@@ -38,7 +38,7 @@ public class DivingBoard {
             return new int[0];
         }
         if (shorter == longer){
-            return new int[shorter * k];
+            return new int[]{shorter * k};
         }
         int[] res = new int[k+1];
         for (int i = 0; i <= k; i++) {
