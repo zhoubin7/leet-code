@@ -17,9 +17,9 @@ public class ValidParentheses {
         String str1 = "()[]{}";
         String str2 = "([)]";
         String str3 = "{[]}";
-        System.out.println(isValid(str1));
-        System.out.println(isValid(str2));
-        System.out.println(isValid(str3));
+        System.out.println(isValid1(str1));
+        System.out.println(isValid1(str2));
+        System.out.println(isValid1(str3));
     }
 
     public static boolean isValid(String s) {
@@ -46,6 +46,17 @@ public class ValidParentheses {
             } else {
                 stack.push(ch);
             }
+        }
+        return stack.isEmpty();
+    }
+
+    public static boolean isValid1(String s) {
+        LinkedList<Character> stack = new LinkedList<>();
+        for (char c : s.toCharArray()) {
+            if (c == '[') stack.push(']');
+            else if (c == '(') stack.push(')');
+            else if (c == '{') stack.push('}');
+            else if (stack.isEmpty() || c != stack.pop()) return false;
         }
         return stack.isEmpty();
     }
