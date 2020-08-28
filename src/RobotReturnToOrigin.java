@@ -9,8 +9,8 @@
 public class RobotReturnToOrigin {
 
     public static void main(String[] args) {
-        System.out.println(judgeCircle("UD"));
-        System.out.println(judgeCircle("LL"));
+        System.out.println(judgeCircle1("UDLURD"));
+        System.out.println(judgeCircle1("LL"));
     }
 
     private static boolean judgeCircle(String moves) {
@@ -28,5 +28,13 @@ public class RobotReturnToOrigin {
             }
         }
         return x==0 && y==0;
+    }
+
+    private static boolean judgeCircle1(String moves) {
+        int[] letters = new int[26 + 'A'];
+        for (char c : moves.toCharArray()) {
+            letters[c]++;
+        }
+        return letters['U'] == letters['D'] && letters['L'] == letters['R'];
     }
 }
