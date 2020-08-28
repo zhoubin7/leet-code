@@ -1,3 +1,4 @@
+
 /**
  * @Package: PACKAGE_NAME
  * @ClassName: CountAndSay
@@ -29,13 +30,12 @@
  */
 public class CountAndSay {
     public static void main(String[] args) {
-//        String s = countAndSay(100);
-//        String s1 = countAndSay1(100);
-        String s2 = countAndSay3(6);
-//        System.out.println(s);
-//        System.out.println(s1);
-        System.out.println(s2);
-//        System.out.println(s.equals(s1));
+//        System.out.println(countAndSay(100));
+        long l = System.currentTimeMillis();
+        System.out.println(countAndSay1(30));
+//        System.out.println(countAndSay2(100));
+//        System.out.println(countAndSay3(100));
+        System.out.println(System.currentTimeMillis()-l);
     }
 
     /**
@@ -71,7 +71,7 @@ public class CountAndSay {
         int cur = 1;
         if ( n == 1 )
             return "1";
-        String str = countAndSay(n - 1);
+        String str = countAndSay2(n - 1);
         for ( cur = 1; cur < str.length(); cur++ ) {
             if ( str.charAt(p1) != str.charAt(cur) ) {// 如果碰到当前字符与前面紧邻的字符不等则更新此次结果
                 int count = cur - p1;
@@ -94,7 +94,7 @@ public class CountAndSay {
         }
         StringBuffer res = new StringBuffer();
         // 拿到上一层的字符串
-        String str = countAndSay(n - 1);
+        String str = countAndSay1(n - 1);
         int length = str.length();
         // 开始指针为0
         int start = 0;
