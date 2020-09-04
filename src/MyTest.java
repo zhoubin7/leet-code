@@ -8,7 +8,5 @@
  */
 public class MyTest {
     public static void main(String[] args) {
-        System.out.println((long) Math.pow(2, 31));
-        System.out.println((long) 2<<30);
     }
 }
