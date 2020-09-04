@@ -9,8 +9,13 @@
 public class SqrtX {
     public static void main(String[] args) {
         System.out.println(mySqrt(5));
+        System.out.println(mySqrt0(5));
         System.out.println(mySqrt1(51));
         System.out.println(mySqrt2(53));
+    }
+
+    public static int mySqrt0(int x) {
+        return (int) Math.sqrt(x);
     }
 
     /**
