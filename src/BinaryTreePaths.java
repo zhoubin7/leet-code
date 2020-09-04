@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * @Package: PACKAGE_NAME
  * @ClassName: BinaryTreePaths
- * @Description:二叉树的所有路径
+ * @Description: 二叉树的所有路径
  * @Author: pug
  * @Date: 2020/9/4 16:18
  * @Version: 1.0
