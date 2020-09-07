@@ -5,8 +5,8 @@ import java.util.List;
 
 /**
  * @Package: PACKAGE_NAME
- * @ClassName: N叉树的前序遍历
- * @Description: TODO(用一句话描述该文件做什么)
+ * @ClassName: N_aryTreePreorderTraversal
+ * @Description: N叉树的前序遍历
  * @Author: pug
  * @Date: 2020/8/18 15:15
  * @Version: 1.0
