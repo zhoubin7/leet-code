@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.Contract;
-
 /**
  * @Package: PACKAGE_NAME
  * @ClassName: MergeTwoSortedLists

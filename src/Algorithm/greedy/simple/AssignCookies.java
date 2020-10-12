@@ -1,8 +1,10 @@
+package Algorithm.greedy.simple;
+
 import java.util.Arrays;
 
 /**
  * @Package: PACKAGE_NAME
- * @ClassName: AssignCookies
+ * @ClassName: Algorithm.greedy.simple.AssignCookies
  * @Description: 分发饼干
  * @Author: pug
  * @Date: 2020/10/9 14:43

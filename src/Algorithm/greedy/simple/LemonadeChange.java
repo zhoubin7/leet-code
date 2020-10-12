@@ -1,6 +1,8 @@
+package Algorithm.greedy.simple;
+
 /**
  * @Package: PACKAGE_NAME
- * @ClassName: LemonadeChange
+ * @ClassName: Algorithm.greedy.simple.LemonadeChange
  * @Description: 柠檬水找零
  * @Author: pug
  * @Date: 2020/10/10 16:47

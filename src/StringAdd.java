@@ -1,5 +1,3 @@
-import java.util.Map;
-
 /**
  * @Package: PACKAGE_NAME
  * @ClassName: StringAdd
