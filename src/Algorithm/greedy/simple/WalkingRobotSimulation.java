@@ -15,10 +15,10 @@ public class WalkingRobotSimulation {
     public static void main(String[] args) {
         int[] commands = {4, -1, 3};
         int[][] obstacles = {};
-        int i = robotSim(commands, obstacles);
+        int i = robotSim1(commands, obstacles);
         System.out.println(i);
     }
-
+    //TODO 没懂题目意思 QAQ
     public static int robotSim(int[] commands, int[][] obstacles) {
         int[] dx = new int[]{0, 1, 0, -1};
         int[] dy = new int[]{1, 0, -1, 0};
@@ -51,5 +51,42 @@ public class WalkingRobotSimulation {
             }
         }
         return ans;
+    }
+
+    public static int robotSim1(int[] commands, int[][] obstacles) {
+        int[] dx = new int[]{0, 1, 0, -1};
+        int[] dy = new int[]{1, 0, -1, 0};
+        int x = 0, y = 0, direction = 0;
+        Set<Integer> obstacleSet = new HashSet<>((int) (obstacles.length / 0.75) + 1);
+        for (int[] o : obstacles) {
+            int ox = o[0] + 30000;
+            int oy = o[1] + 30000;
+            obstacleSet.add((ox << 16) | oy);
+        }
+        int max = 0;
+        for (int cmd : commands) {
+            switch (cmd) {
+                case -2:
+                    direction = (direction + 3) % 4;
+                    break;
+                case -1:
+                    direction = (direction + 1) % 4;
+                    break;
+                default:
+                    for (int step = 0; step < cmd; step++) {
+                        x += dx[direction];
+                        y += dy[direction];
+                        int code = ((x + 30000) << 16) | (y + 30000);
+                        if (obstacleSet.contains(code)) {
+                            x -= dx[direction];
+                            y -= dy[direction];
+                            break;
+                        }
+                    }
+                    max = Math.max(max, x * x + y * y);
+                    break;
+            }
+        }
+        return max;
     }
 }
