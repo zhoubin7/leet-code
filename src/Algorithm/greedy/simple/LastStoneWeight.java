@@ -13,17 +13,38 @@ import java.util.Arrays;
 public class LastStoneWeight {
     public static void main(String[] args) {
 //        [2,7,4,1,8,1]
-        int[] stones = {2,7,4,1,8,1};
+        int[] stones = {2, 7, 4, 1, 8, 1};
         int i = lastStoneWeight(stones);
         System.out.println(i);
     }
+
     public static int lastStoneWeight(int[] stones) {
         int index = stones.length - 1;
-        for(int i = 0; i < stones.length - 1; i++){     //通过stones.length来判断需要操作的次数。（不用将stones.length == 1的情况单独考虑）
+        for (int i = 0; i < stones.length - 1; i++) {     //通过stones.length来判断需要操作的次数。（不用将stones.length == 1的情况单独考虑）
             Arrays.sort(stones);                        //将sort放在循环体的开始。（避免在循环体外再写一次重复的sort（））
-            stones[index] -= stones[index-1];           //两种不同情况使用同一表达式处理。（）
-            stones[index-1] = 0;
+            stones[index] -= stones[index - 1];           //两种不同情况使用同一表达式处理。（）
+            stones[index - 1] = 0;
         }
-        return stones[stones.length-1];
+        return stones[stones.length - 1];
+    }
+
+    public static int lastStoneWeight1(int[] stones) {
+        int len = stones.length;
+
+        if (len == 1)
+            return stones[0];
+
+        Arrays.sort(stones);
+
+
+        while (stones[len - 2] != 0) {
+
+            stones[len - 1] = stones[len - 1] - stones[len - 2];
+            stones[len - 2] = 0;
+
+            Arrays.sort(stones);
+
+        }
+        return stones[len - 1];
     }
 }
