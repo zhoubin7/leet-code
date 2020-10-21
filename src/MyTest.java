@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 /**
  * @Package: PACKAGE_NAME
  * @ClassName: MyTest
@@ -7,6 +10,16 @@
  * @Version: 1.0
  */
 public class MyTest {
+
     public static void main(String[] args) {
+        a:
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (j==1){
+                    break a;
+                }
+                System.out.println("i:"+i+",j:"+j);
+            }
+        }
     }
 }
